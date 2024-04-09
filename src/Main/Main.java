@@ -1,7 +1,6 @@
 package Main;
+
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 
 import Controllers.MainController;
 import javafx.application.Application;
@@ -18,6 +17,11 @@ public class Main extends Application {
     private static final String SEARCH_STUDENT_VIEW = "/Views/SearchStudentView.fxml";
 
     private static final String VIEW_COURSE_SCHEDULE_VIEW = "/Views/ViewCourseScheduleView.fxml";
+
+    private static final String CREATE_NEW_STUDENT_VIEW = "/Views/CreateNewStudentView.fxml";
+
+    private static final String CREATE_NEW_COURSE_VIEW = "/Views/CreateNewCourseView.fxml";
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -37,6 +41,44 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("");
             primaryStage.show();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading view");
+            alert.setContentText("An error occurred while loading the view: " + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    public void loadCreateNewCourseView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(CREATE_NEW_COURSE_VIEW));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Create New Course");
+            stage.show();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading view");
+            alert.setContentText("An error occurred while loading the view: " + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    public void loadCreateNewStudentView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(CREATE_NEW_STUDENT_VIEW));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Create New Student");
+            stage.show();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -83,6 +125,5 @@ public class Main extends Application {
             alert.showAndWait();
         }
     }
-
 
 }

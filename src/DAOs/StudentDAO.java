@@ -44,4 +44,28 @@ public class StudentDAO {
         }
         return null;
     }
+
+    public static boolean insertStudent(Students student) {
+        String user = System.getenv("USER");
+        String password = System.getenv("PASSWORD");
+        String url = System.getenv("URL");
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            Statement stmt = conn.createStatement();
+            String sql = "INSERT INTO Students VALUES ('" + student.getStudentID() + "', '" + student.getFirstName()
+                    + "', '" + student.getLastName() + "', '" + student.getStreet() + "', '" + student.getCity() + "', '"
+                    + student.getState() + "', " + student.getZipCode() + ", '" + student.getPhone() + "', '"
+                    + student.getEmail() + "', " + student.getMajorID() + ", '" + student.getExpectedGraduationDate()
+                    + "')";
+            stmt.executeUpdate(sql);
+            return true;
+        } catch (SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Database Error");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+        return false;
+    }
 }

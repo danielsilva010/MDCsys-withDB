@@ -5,7 +5,7 @@ import Utils.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-public class MainController implements SceneManager{
+public class MainController implements SceneManager {
     private Main main;
 
     public void setMain(Main main) {
@@ -25,5 +25,15 @@ public class MainController implements SceneManager{
     @FXML
     public void loadViewCourseScheduleView(ActionEvent event) {
         main.loadViewCourseScheduleView();
+    }
+
+    @FXML
+    public void loadCreateNewStudentView(ActionEvent event) {
+        main.loadCreateNewStudentView();
+    }
+
+    @FXML
+    public void loadCreateNewCourseView(ActionEvent event) {
+        main.loadCreateNewCourseView();
     }
 }
