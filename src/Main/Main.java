@@ -22,6 +22,8 @@ public class Main extends Application {
 
     private static final String CREATE_NEW_COURSE_VIEW = "/Views/CreateNewCourseView.fxml";
 
+    private static final String COURSE_LIST_VIEW = "/Views/CourseListView.fxml";
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -41,6 +43,25 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("");
             primaryStage.show();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading view");
+            alert.setContentText("An error occurred while loading the view: " + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    public void loadCourseListView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(COURSE_LIST_VIEW));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Course List");
+            stage.show();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");

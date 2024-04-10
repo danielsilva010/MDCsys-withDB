@@ -16,6 +16,7 @@
 package Models;
 
 public class Schedule {
+    private CourseRoster courseRoster;
     private String courseID;
     private long CRN;
     private String courseName;
@@ -34,12 +35,12 @@ public class Schedule {
         this.room = otherSchedule.room;
         this.capacity = otherSchedule.capacity;
         this.creditHours = otherSchedule.creditHours;
+        this.courseRoster = new CourseRoster(otherSchedule.courseRoster);
     }
 
     public Schedule() {
-        
+        courseRoster = new CourseRoster();
     }
-
 
     public String getTermFormatted() {
         String term = this.term;
@@ -48,7 +49,16 @@ public class Schedule {
         return partsOfTerm[0] + " " + partsOfTerm[1];
     }
 
-    public Schedule(String courseID, long cRN, String courseName, String term, String facultyID, String room, int capacity,
+    public void setGrade(String grade) {
+        courseRoster.setGrade(grade);
+    }
+
+    public String getGrade(String studentID) {
+        return courseRoster.getGrade();
+    }
+
+    public Schedule(String courseID, long cRN, String courseName, String term, String facultyID, String room,
+            int capacity,
             int creditHours) {
 
         this.courseID = courseID;
@@ -59,53 +69,77 @@ public class Schedule {
         this.room = room;
         this.capacity = capacity;
         this.creditHours = creditHours;
+        courseRoster = new CourseRoster();
+    }
+
+    public CourseRoster getCourseRoster() {
+        return new CourseRoster(courseRoster);
+    }
+
+    public void setCourseRoster(CourseRoster courseRoster) {
+        this.courseRoster = new CourseRoster(courseRoster);
     }
 
     public String getCourseID() {
         return courseID;
     }
+
     public void setCourseID(String courseID) {
         this.courseID = courseID;
     }
+
     public long getCRN() {
         return CRN;
     }
+
     public void setCRN(long cRN) {
         CRN = cRN;
     }
+
     public String getCourseName() {
         return courseName;
     }
+
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
+
     public String getTerm() {
         return term;
     }
+
     public void setTerm(String term) {
         this.term = term;
     }
+
     public String getFacultyID() {
         return facultyID;
     }
+
     public void setFacultyID(String facultyID) {
         this.facultyID = facultyID;
     }
+
     public String getRoom() {
         return room;
     }
+
     public void setRoom(String room) {
         this.room = room;
     }
+
     public int getCapacity() {
         return capacity;
     }
+
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
     public int getCreditHours() {
         return creditHours;
     }
+
     public void setCreditHours(int creditHours) {
         this.creditHours = creditHours;
     }
@@ -117,6 +151,4 @@ public class Schedule {
                 + creditHours + "]";
     }
 
-    
-    
 }

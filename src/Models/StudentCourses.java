@@ -16,55 +16,82 @@
 package Models;
 
 public class StudentCourses {
-    private CourseRoster courseRoster;
-    private Schedule schedule;
-    private Faculty faculty;
+    private String studentID;
+    private String CRN;
+    private String courseID;
+    private String courseName;
+    private String term;
+    private String facultyID;
+    private String grade;
 
-    public String getGrade() {
-        return courseRoster.getGrade();
+    public StudentCourses() {
     }
 
-    public String getTerm() {
-        String term = schedule.getTerm();
-        term = term.replaceAll("(?<=\\D)(?=\\d)", "$0#");
-        String[] partsOfTerm = term.split("#");
-        return partsOfTerm[0] + " " + partsOfTerm[1];
+    public StudentCourses(String studentID, String CRN, String courseID, String courseName, String term, String facultyID, String grade) {
+        this.studentID = studentID;
+        this.CRN = CRN;
+        this.courseID = courseID;
+        this.courseName = courseName;
+        this.term = term;
+        this.facultyID = facultyID;
+        this.grade = grade;
     }
 
-    public String getCourseName() {
-        return schedule.getCourseName();
+    public String getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
+    }
+
+    public String getCRN() {
+        return CRN;
+    }
+
+    public void setCRN(String cRN) {
+        CRN = cRN;
     }
 
     public String getCourseID() {
-        return schedule.getCourseID();
+        return courseID;
     }
 
-    public long getCRN() {
-        return courseRoster.getCRN();
+    public void setCourseID(String courseID) {
+        this.courseID = courseID;
     }
 
-    public String getFaculty() {
-        return faculty.getLastName();
+    public String getCourseName() {
+        return courseName;
     }
 
-    public CourseRoster getCourseRoster() {
-        return courseRoster;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public void setCourseRoster(CourseRoster courseRoster) {
-        this.courseRoster = courseRoster;
+    public String getTerm() {
+        return term;
     }
 
-    public Schedule getSchedule() {
-        return schedule;
+    public void setTerm(String term) {
+        this.term = term;
     }
 
-    public void setSchedule(Schedule schedule) {
-        this.schedule = schedule;
+    public String getFacultyID() {
+        return facultyID;
     }
 
-    public void setFaculty(Faculty faculty) {
-        this.faculty = faculty;
+    public void setFacultyID(String facultyID) {
+        this.facultyID = facultyID;
     }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
 
 }

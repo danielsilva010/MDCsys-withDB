@@ -99,7 +99,7 @@
             </VBox>
             <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="155.0" style="-fx-background-insets: -10; -fx-padding: 10;" text="Course list for a student" wrapText="true">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#loadCourseListView" prefHeight="57.0" prefWidth="155.0" style="-fx-background-insets: -10; -fx-padding: 10;" text="Course list for a student" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="13.0" />
                      </font>
