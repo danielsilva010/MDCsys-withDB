@@ -1,19 +1,8 @@
 package DAOs;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
-import Models.CourseRoster;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-
 public class CourseRosterDAO {
 
-    public static ArrayList<CourseRoster> getStudentRoster(String studentID) {
+    /*  public static ArrayList<CourseRoster> getStudentRoster(String studentID) {
         String user = System.getenv("USER");
         String password = System.getenv("PASSWORD");
         String url = System.getenv("URL");
@@ -40,5 +29,5 @@ public class CourseRosterDAO {
             alert.showAndWait();
         }
         return null;
-    }
+    } */
 }
