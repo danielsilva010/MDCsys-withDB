@@ -53,7 +53,7 @@ public class CreateNewStudentController {
 
     @FXML
     public void initialize() {
-        ArrayList<Major> majors = MajorDAO.getMajors();
+        ArrayList<Major> majors = MajorDAO.getAllMajors();
         for (Major major : majors) {
             cbMajorID.getItems().add(major.getMajorID() + " - " + major.getMajorName());
         }
