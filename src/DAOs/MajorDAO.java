@@ -12,7 +12,7 @@ import javafx.scene.control.Alert;
 
 public class MajorDAO {
     
-    public static ArrayList<Major> getMajors() {
+    public static ArrayList<Major> getAllMajors() {
         ArrayList<Major> majors = new ArrayList<>();
         // Add code here to get all majors from the database
         String user = System.getenv("USER");
