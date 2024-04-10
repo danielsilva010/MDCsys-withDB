@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Main.Test",
+            "projectName": "mdc_abbd9d73"
+        },
+        {
+            "type": "java",
             "name": "StudentDAO",
             "request": "launch",
             "mainClass": "DAOs.StudentDAO",
