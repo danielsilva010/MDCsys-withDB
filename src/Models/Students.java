@@ -15,13 +15,6 @@
  */
 package Models;
 public class Students {
-    /*
-     * Student ID,
-     * First Name, Last Name, Street, City, State, Zip Code, Phone, Email, Major ID,
-     * Expected
-     * Graduation Date
-     */
-
     private String studentID;
     private String firstName;
     private String lastName;
