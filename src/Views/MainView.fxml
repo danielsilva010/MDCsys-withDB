@@ -183,7 +183,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="155.0" style="-fx-background-insets: -10; -fx-padding: 10;" text="Create New Faculty" wrapText="true">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#loadCreateFacultyView" prefHeight="57.0" prefWidth="155.0" style="-fx-background-insets: -10; -fx-padding: 10;" text="Create New Faculty" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="13.0" />
                      </font>

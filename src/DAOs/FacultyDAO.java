@@ -87,4 +87,20 @@ public class FacultyDAO {
         }
         return null;
     }
+
+    public static boolean insertFaculty(Faculty faculty) {
+        String user = System.getenv("USER");
+        String password = System.getenv("PASSWORD");
+        String url = System.getenv("URL");
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            String sql = "INSERT INTO Faculty (FacultyID, firstName, lastName, hireDate, title, salary, street, city, state, zipCode, phone, email, departmentID) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+        } catch (SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading Faculty");
+            alert.setContentText("An error occurred while loading the Faculty: " + e.getMessage());
+            alert.showAndWait();
+        }
+    }
 }

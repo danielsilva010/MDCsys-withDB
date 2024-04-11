@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -23,6 +24,8 @@ public class Main extends Application {
     private static final String CREATE_NEW_COURSE_VIEW = "/Views/CreateNewCourseView.fxml";
 
     private static final String COURSE_LIST_VIEW = "/Views/CourseListView.fxml";
+
+    private static final String CREATE_FACULTY_VIEW = "/Views/CreateFacultyView.fxml";
 
     public static void main(String[] args) {
         launch(args);
@@ -48,6 +51,23 @@ public class Main extends Application {
             alert.setTitle("Error");
             alert.setHeaderText("Error loading view");
             alert.setContentText("An error occurred while loading the view: " + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    public void loadCreateFacultyView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(CREATE_FACULTY_VIEW));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Create Faculty");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch(IOException e) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading view");
+            alert.setContentText("An error occured loading the view:" + e.getMessage());
             alert.showAndWait();
         }
     }
