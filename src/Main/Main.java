@@ -15,6 +15,8 @@ public class Main extends Application {
 
     private static final String MAIN_VIEW = "/Views/MainView.fxml";
 
+    private static final String ADD_STUDENT_TO_COURSE_VIEW = "/Views/AddStudentToCourseView.fxml";
+
     private static final String SEARCH_STUDENT_VIEW = "/Views/SearchStudentView.fxml";
 
     private static final String VIEW_COURSE_SCHEDULE_VIEW = "/Views/ViewCourseScheduleView.fxml";
@@ -55,6 +57,23 @@ public class Main extends Application {
         }
     }
 
+    public void loadAddStudentToCourseView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(ADD_STUDENT_TO_COURSE_VIEW));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Add Student to Course");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading view");
+            alert.setContentText("An error occured loading the view:" + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
     public void loadCreateFacultyView() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(CREATE_FACULTY_VIEW));
@@ -63,7 +82,7 @@ public class Main extends Application {
             stage.setTitle("Create Faculty");
             stage.setScene(new Scene(root));
             stage.show();
-        } catch(IOException e) {
+        } catch (IOException e) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error loading view");
