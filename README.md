@@ -40,17 +40,17 @@ Faculty members can enter their ID in the provided text field to view their sche
 
 - **src:** The source code for the system is stored here.
 
-`-`: Controllers: The controller classes are stored here.
+`- Controllers:` The controller classes are stored here.
 
-`-`: Models: The model classes are stored here.
+`- Models:` The model classes are stored here.
 
-`-`: Views: The view classes are stored here.
+`- Views:` The view classes are stored here.
 
-`-`: Utils: The utility classes are stored here.
+`- Utils:` The utility classes are stored here.
 
-`-`: Main: The main class is stored here.
+`- Main:` The main class is stored here.
 
-`-`: DAO: The data access object is stored here.
+`- DAO:` The data access object is stored here.
 
 ## Disclaimer
 
