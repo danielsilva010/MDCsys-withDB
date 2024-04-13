@@ -36,6 +36,10 @@ public class MainController implements SceneManager {
         main.loadAddStudentToCourseView();
     }
 
+    public void loadViewFacultyCoursesView(ActionEvent event) {
+        main.loadViewFacultyCoursesView();
+    }
+
     @FXML
     public void loadCreateNewCourseView(ActionEvent event) {
         main.loadCreateNewCourseView();

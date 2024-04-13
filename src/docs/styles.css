@@ -1,0 +1,21 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+h1, h2 {
+    color: #333;
+}
+p, li {
+    color: #555;
+}
+code {
+    background: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 3px;
+}

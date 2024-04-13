@@ -81,14 +81,14 @@ public class ScheduleDAO {
         String password = System.getenv("PASSWORD");
         String url = System.getenv("URL");
 
-        try(Connection conn = DriverManager.getConnection(url, user, password)) {
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
             String sql = "SELECT * FROM Schedule WHERE " +
-                "CRN IN (SELECT CRN FROM CourseRoster WHERE studentID = ?)";
+                    "CRN IN (SELECT CRN FROM CourseRoster WHERE studentID = ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, studentID);
             ResultSet rs = pstmt.executeQuery();
             ArrayList<Schedule> courses = new ArrayList<>();
-            while(rs.next()) {
+            while (rs.next()) {
                 Schedule course = new Schedule();
                 course.setCRN(rs.getLong("CRN"));
                 course.setCapacity(rs.getInt("Capacity"));
@@ -102,7 +102,7 @@ public class ScheduleDAO {
                 courses.add(course);
             }
             return courses;
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Database Error");
@@ -118,16 +118,51 @@ public class ScheduleDAO {
         String password = System.getenv("PASSWORD");
         String url = System.getenv("URL");
 
-        try(Connection conn = DriverManager.getConnection(url, user, password)) {
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
             String sql = "SELECT grade FROM CourseRoster WHERE studentID = ? AND CRN = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, studentID);
             pstmt.setLong(2, CRN);
             ResultSet rs = pstmt.executeQuery();
-            if(rs.next()) {
+            if (rs.next()) {
                 return rs.getString("grade");
             }
-        } catch(SQLException e) {
+        } catch (SQLException e) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Database Error");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+        return null;
+    }
+
+
+    public static ArrayList<Schedule> getCoursesByFaculty(String facultyID) {
+        String user = System.getenv("USER");
+        String password = System.getenv("PASSWORD");
+        String url = System.getenv("URL");
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            String sql = "SELECT * FROM Schedule WHERE facultyID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, facultyID);
+            ResultSet rs = pstmt.executeQuery();
+            ArrayList<Schedule> courses = new ArrayList<>();
+            while (rs.next()) {
+                Schedule course = new Schedule();
+                course.setCRN(rs.getLong("CRN"));
+                course.setCapacity(rs.getInt("Capacity"));
+                course.setCreditHours(rs.getInt("CreditHours"));
+                course.setFacultyID(rs.getString("FacultyID"));
+                course.setRoom(rs.getString("Room"));
+                course.setTerm(rs.getString("Term"));
+                course.setCourseName(rs.getString("CourseName"));
+                course.setCourseID(rs.getString("CourseID"));
+                courses.add(course);
+            }
+            return courses;
+        } catch (SQLException e) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Database Error");
