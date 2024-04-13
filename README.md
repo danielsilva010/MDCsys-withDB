@@ -39,24 +39,18 @@ Faculty members can enter their ID in the provided text field to view their sche
 ## Structure
 
 - **src:** The source code for the system is stored here.
-`-`: Controllers: The controller classes are stored here.
-    `-`: AddStudentToCourseController: The controller class for adding students to a course is stored here.
-    `-`: CreateNewStudentController: The controller class for creating a new student is stored here.
-    `-`: SearchStudentController: The controller class for searching for a student is stored here.
-    `-`: ViewCourseScheduleController: The controller class for viewing a course schedule is stored here.
-    `-`: MainController: The controller class for the main view is stored here.
-    `-`: CreateFacultyController: The controller class for creating a new faculty member is stored here.
-    `-`: ViewStudentScheduleController: The controller class for viewing a student's schedule is stored here.
-`-`: Models: The model classes are stored here.
-    `-`: Schedule: The schedule class is stored here.
-    `-`: Student: The student class is stored here.
-    `-`: CourseRoster: The course roster class is stored here.
-    `-`: Faculty: The faculty class is stored here.
-`-`: Views: The view classes are stored here.
-`-`: Utils: The utility classes are stored here.
-`-`: Main: The main class is stored here.
-`-`: DAO: The data access object is stored here.
 
+`-`: Controllers: The controller classes are stored here.
+
+`-`: Models: The model classes are stored here.
+
+`-`: Views: The view classes are stored here.
+
+`-`: Utils: The utility classes are stored here.
+
+`-`: Main: The main class is stored here.
+
+`-`: DAO: The data access object is stored here.
 
 ## Disclaimer
 
