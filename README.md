@@ -50,7 +50,7 @@ Faculty members can enter their ID in the provided text field to view their sche
 
 `- Main:` The main class is stored here.
 
-`- DAO:` The data access object is stored here.
+`- DAO: The data access object is stored here.
 
 ## Disclaimer
 
