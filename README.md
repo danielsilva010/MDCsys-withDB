@@ -19,7 +19,9 @@ The Faculty Course Management System is a Java-based application designed to fac
 
 To run the system, ensure you have the following installed:
 `-`: Oracle Java Development Kit (JDK)
+
 `-`: JavaFX SDK
+
 `-`: MySQL - Proper JDBC drivers for database connectivity
 
 ## Usage
