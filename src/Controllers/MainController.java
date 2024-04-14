@@ -27,6 +27,10 @@ public class MainController implements SceneManager {
         main.loadViewCourseScheduleView();
     }
 
+    public void loadCalculateGPAView(ActionEvent event) {
+        main.loadCalculateGPAView();
+    }
+
     @FXML
     public void loadCreateNewStudentView(ActionEvent event) {
         main.loadCreateNewStudentView();

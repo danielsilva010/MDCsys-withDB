@@ -64,7 +64,7 @@ public class ViewFacultyCoursesController {
             CRNColumn.setCellValueFactory(new PropertyValueFactory<Schedule, Long>("CRN"));
             CourseIDColumn.setCellValueFactory(new PropertyValueFactory<Schedule, String>("courseID"));
             courseNameColumn.setCellValueFactory(new PropertyValueFactory<Schedule, String>("courseName"));
-            TermColumn.setCellValueFactory(new PropertyValueFactory<Schedule, String>("term"));
+            TermColumn.setCellValueFactory(new PropertyValueFactory<Schedule, String>("termFormatted"));
         }
         else {
             Alert alert = new Alert(AlertType.ERROR);
