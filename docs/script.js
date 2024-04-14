@@ -1,19 +1,13 @@
-const keyFeaturesList = document.getElementById('key-features');
+const listItems = document.querySelectorAll('#key-features li');
 
-window.onload = function() {
-  keyFeaturesList.style.opacity = 0; // Initially hide the list
+listItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.backgroundColor = '#f0f0f0';
+        item.querySelector('.feature-description').style.display = 'block';
+    });
 
-  // Animation function to gradually show the list
-  const animateList = () => {
-    let opacity = 0;
-    const intervalId = setInterval(() => {
-      opacity += 0.1;
-      keyFeaturesList.style.opacity = opacity;
-      if (opacity >= 1) {
-        clearInterval(intervalId);
-      }
-    }, 20); // Adjust the interval for animation speed (lower for faster)
-  };
-
-  animateList();
-};
+    item.addEventListener('mouseleave', () => {
+        item.style.backgroundColor = '';
+        item.querySelector('.feature-description').style.display = 'none';
+    });
+});
