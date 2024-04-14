@@ -1,28 +1,46 @@
-/* style.css */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+  background-color: #f5f5f5; /* Light background for better contrast */
 }
+
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+  width: 70%; /* Adjust container width as needed */
+  padding: 20px; /* Add padding for better spacing */
 }
+
 h1, h2 {
-    color: #333;
+  color: #2196F3; /* Accent color for headings */
 }
+
+h3 {
+  color: #333; /* Subheading with a darker tone */
+}
+
 p, li {
-    color: #555;
+  color: #666; /* Slightly lighter text for better readability */
+  line-height: 1.8; /* Increase line-height for better spacing */
 }
-code {
-    background: #f4f4f4;
-    padding: 2px 4px;
-    border-radius: 3px;
+
+.navigation { /* Add a navigation bar (example) */
+  background-color: #eee;
+  padding: 10px;
+  margin-bottom: 20px;
 }
+
+.navigation a {
+  color: #333;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.navigation a:hover {
+  background-color: #ddd;
+}
+
 img {
-  max-width: 100%;
-  height: auto;
-  display: block; /* Add this line */
-  margin: 0 auto; /* Add this line */
-    object-fit: contain;
+  border: 1px solid #ddd; /* Add a subtle border */
+  margin: 10px auto;
+}
+
+footer {
+  text-align: center; /* Center text in footer */
 }
