@@ -43,6 +43,24 @@ public class Main extends Application {
         }
     }
 
+    public void loadViewCoursesByCRNView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(FilePaths.VIEW_COURSES_BY_CRN_VIEW.getPath()));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("View courses by CRN");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading view");
+            alert.setContentText("An error occured loading the view:" + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
     public void loadViewFacultyCoursesView() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(FilePaths.VIEW_FACULTY_COURSES_VIEW.getPath()));
@@ -78,7 +96,6 @@ public class Main extends Application {
             alert.showAndWait();
         }
     }
-
 
     public void loadModifyGradesView() {
         try {
@@ -238,4 +255,3 @@ public class Main extends Application {
     }
 
 }
-

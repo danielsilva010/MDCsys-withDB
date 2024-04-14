@@ -48,6 +48,38 @@ public class ScheduleDAO {
         return courses;
     }
 
+    public static Schedule getOneSchedule(long CRN) {
+        String user = System.getenv("USER");
+        String password = System.getenv("PASSWORD");
+        String url = System.getenv("URL");
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            String sql = "SELECT * FROM Schedule WHERE CRN = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setLong(1, CRN);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Schedule schedule = new Schedule();
+                schedule.setCRN(rs.getLong("CRN"));
+                schedule.setCapacity(rs.getInt("Capacity"));
+                schedule.setCreditHours(rs.getInt("CreditHours"));
+                schedule.setFacultyID(rs.getString("FacultyID"));
+                schedule.setRoom(rs.getString("Room"));
+                schedule.setTerm(rs.getString("Term"));
+                schedule.setCourseName(rs.getString("CourseName"));
+                schedule.setCourseID(rs.getString("CourseID"));
+                return schedule;
+            }
+        } catch (SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Database Error");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+        return null;
+    }
+
     public static boolean insertCourse(Schedule schedule) {
         String user = System.getenv("USER");
         String password = System.getenv("PASSWORD");
@@ -136,7 +168,6 @@ public class ScheduleDAO {
         }
         return null;
     }
-
 
     public static ArrayList<Schedule> getCoursesByFaculty(String facultyID) {
         String user = System.getenv("USER");

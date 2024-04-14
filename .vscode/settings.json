@@ -12,5 +12,20 @@
         "/Users/danielsilva/Downloads/javafx-sdk-21.0.1/lib/javafx.swing.jar",
         "/Users/danielsilva/Downloads/javafx-sdk-21.0.1/lib/javafx.web.jar",
         "/Users/danielsilva/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar"
+    ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "mdc",
+            "database": "MDC",
+            "username": "root"
+        }
     ]
 }
