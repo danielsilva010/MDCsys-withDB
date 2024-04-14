@@ -7,6 +7,7 @@ body {
 }
 
 .container > section, 
+.container > ul,
 .container > img,
 .container > h2, /* Target <h2> headings as well */
 .container p { 
