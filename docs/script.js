@@ -12,10 +12,12 @@ listItems.forEach(item => {
     });
 });
 
-const sections = document.querySelectorAll('.container > img, .container > section, .container > h2, .container p');
-let delay = 0.3; // Initial delay 
+const sections = document.querySelectorAll('.container > img, .container > *'); // Target image and direct children of container
+let delay = 0.3;
 
 sections.forEach(section => {
-    section.style.animationDelay = delay + 's';
-    delay += 0.2; // Increment delay for each section
+   section.style.opacity = 0; // Add opacity for fade-in
+   section.style.animation = 'fadeIn 1s ease-in forwards'; 
+   section.style.animationDelay = delay + 's';
+   delay += 0.2; 
 });
