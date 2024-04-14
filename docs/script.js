@@ -12,8 +12,8 @@ listItems.forEach(item => {
     });
 });
 
-const sections = document.querySelectorAll('.container > section, .container > h2, .container p');
-let delay = 0.3; // Initial delay
+const sections = document.querySelectorAll('.container > img, .container > section, .container > h2, .container p');
+let delay = 0.3; // Initial delay 
 
 sections.forEach(section => {
     section.style.animationDelay = delay + 's';
