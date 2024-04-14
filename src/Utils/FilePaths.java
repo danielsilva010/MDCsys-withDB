@@ -10,7 +10,8 @@ public enum FilePaths {
     CREATE_NEW_COURSE_VIEW("/Views/CreateNewCourseView.fxml"),
     COURSE_LIST_VIEW("/Views/CourseListView.fxml"),
     CREATE_FACULTY_VIEW("/Views/CreateFacultyView.fxml"),
-    CALCULATE_GPA_VIEW("/Views/CalculateGPAView.fxml");
+    CALCULATE_GPA_VIEW("/Views/CalculateGPAView.fxml"),
+    MODIFY_GRADES_VIEW("/Views/ModifyGradesView.fxml");
 
     private final String path;
 

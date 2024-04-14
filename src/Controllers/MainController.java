@@ -18,6 +18,10 @@ public class MainController implements SceneManager {
     }
 
     @FXML
+    public void loadModifyGradesView(ActionEvent event) {
+        main.loadModifyGradesView();
+    }
+    @FXML
     public void loadSearchStudentView(ActionEvent event) {
         main.loadSearchStudentView();
     }

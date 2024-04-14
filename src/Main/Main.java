@@ -79,6 +79,25 @@ public class Main extends Application {
         }
     }
 
+
+    public void loadModifyGradesView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(FilePaths.MODIFY_GRADES_VIEW.getPath()));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Modify Grades");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading view");
+            alert.setContentText("An error occured loading the view:" + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
     public void loadCreateFacultyView() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(FilePaths.CREATE_FACULTY_VIEW.getPath()));
@@ -174,7 +193,7 @@ public class Main extends Application {
             alert.setHeaderText("Error loading view");
             alert.setContentText("An error occurred while loading the view: " + e.getMessage());
             alert.showAndWait();
-            
+
         }
     }
 
@@ -219,3 +238,4 @@ public class Main extends Application {
     }
 
 }
+

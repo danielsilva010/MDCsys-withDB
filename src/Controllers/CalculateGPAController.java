@@ -1,5 +1,7 @@
 package Controllers;
 
+import static Utils.dataUtilities.getCourseName;
+
 import java.util.ArrayList;
 
 import DAOs.CourseRosterDAO;
@@ -13,7 +15,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
-import static Utils.dataUtilities.getCourseName;
 
 public class CalculateGPAController {
 
@@ -99,6 +100,5 @@ public class CalculateGPAController {
             alert.showAndWait();
         }
     }
-
 
 }

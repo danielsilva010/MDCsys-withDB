@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 package Models;
-
 public class StudentCourses {
     private String studentID;
     private String CRN;

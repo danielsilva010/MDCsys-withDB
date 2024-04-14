@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 package Models;
+
 public class CourseRoster {
     private long CRN;
     private String studentID;
     private String grade;
-    
+
     public CourseRoster() {
     }
 
@@ -62,7 +63,5 @@ public class CourseRoster {
     public String toString() {
         return "CourseRoster [CRN=" + CRN + ", studentID=" + studentID + ", grade=" + grade + "]";
     }
-
-    
 
 }
