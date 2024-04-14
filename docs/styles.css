@@ -19,20 +19,9 @@ code {
     padding: 2px 4px;
     border-radius: 3px;
 }
-/* Styles for all devices */
 img {
   max-width: 100%;
   height: auto;
-}
-/* Styles for all devices */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Styles for mobile devices */
-@media (max-width: 767px) {
-  img {
-    max-width: 500px; /* Adjust this value as needed */
-  }
+  display: block; /* Add this line */
+  margin: 0 auto; /* Add this line */
 }
