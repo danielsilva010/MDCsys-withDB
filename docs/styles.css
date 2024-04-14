@@ -24,6 +24,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* Styles for all devices */
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* Styles for mobile devices */
 @media (max-width: 767px) {
