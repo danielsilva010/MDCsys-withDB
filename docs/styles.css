@@ -19,7 +19,6 @@ body {
 /* Style the hero section */
 .hero {
     height: 60vh; /* Adjust height as needed */
-    background-color: #f0f0f0;  
     text-align: center;
     position: relative; /* Enables positioning of child elements */
 }
