@@ -3,81 +3,113 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #f5f5f5;
-  margin: 0; /* Remove default body margin for better control */
+  margin: 0;
+  /* Remove default body margin for better control */
 }
 
-.container > section, 
-.container > ul,
-.container > img,
-.container > h2, /* Target <h2> headings as well */
-.container p { 
-    opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
-    animation-delay: 0.3s; /* Base delay - we'll adjust this with JavaScript */
-} 
+.container>section,
+.container>ul,
+.container>img,
+.container>h2,
+/* Target <h2> headings as well */
+.container p {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 0.3s;
+  /* Base delay - we'll adjust this with JavaScript */
+}
 
 /* Style the hero section */
 .hero {
-    height: 60vh; /* Adjust height as needed */
-    text-align: center;
-    position: relative; /* Enables positioning of child elements */
+  height: 60vh;
+  /* Adjust height as needed */
+  text-align: center;
+  position: relative;
+  /* Enables positioning of child elements */
 }
 
 .hero h1 {
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards; /* Animation properties */
-    animation-delay: 0.5s; /* Slight delay before fading in */ 
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+  /* Animation properties */
+  animation-delay: 0.5s;
+  /* Slight delay before fading in */
 }
 
 .hero p {
-    opacity: 0;
-    animation: slideUp 1.5s ease-in forwards;
-    animation-delay: 1s;
+  opacity: 0;
+  animation: slideUp 1.5s ease-in forwards;
+  animation-delay: 1s;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0px); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 #key-features li {
-   transition: background-color 0.3s ease; /* For the hover effect */
+  transition: background-color 0.3s ease;
+  /* For the hover effect */
 }
 
 #key-features li .feature-description {
-   display: none; /* Initially hide the description */
+  display: none;
+  /* Initially hide the description */
 }
 
 /* Global Styles for all devices */
-.container, .navigation, .footer {
-  padding: 20px; /* Consistent padding for sections */
+.container,
+.navigation,
+.footer {
+  padding: 20px;
+  /* Consistent padding for sections */
 }
 
-h1, h2, h3 {
-  margin: 1em 0; /* Consistent margin for headings */
+h1,
+h2,
+h3 {
+  margin: 1em 0;
+  /* Consistent margin for headings */
 }
 
 ul {
-  list-style: none; /* Remove default bullet points */
-  padding: 0; /* Remove default list padding */
+  list-style: none;
+  /* Remove default bullet points */
+  padding: 0;
+  /* Remove default list padding */
 }
 
 li {
-  margin-bottom: 10px; /* Spacing between list items */
+  margin-bottom: 10px;
+  /* Spacing between list items */
 }
 
 a {
-  color: #2196F3; /* Accent color for links */
+  color: #2196F3;
+  /* Accent color for links */
   text-decoration: none;
 }
 
 a:hover {
-  opacity: 0.8; /* Slight opacity change on hover */
+  opacity: 0.8;
+  /* Slight opacity change on hover */
 }
 
 img {
@@ -97,6 +129,7 @@ img {
 
 /* Media Queries for Mobile Devices (Adjust breakpoint as needed) */
 @media only screen and (max-width: 768px) {
+
   /* Adjust container width for mobile */
   .container {
     width: 100%;
@@ -111,18 +144,21 @@ img {
     font-size: 1.8em;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     font-size: 1.5em;
   }
 
   /* Stack elements vertically on mobile */
-  .container > * {
-    margin-bottom: 20px; /* Spacing between sections on mobile */
+  .container>* {
+    margin-bottom: 20px;
+    /* Spacing between sections on mobile */
   }
 }
 
 /* Media Queries for Tablets (Optional - Adjust breakpoint as needed) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
+
   /* Adjust container width for tablets */
   .container {
     width: 80%;
@@ -139,4 +175,82 @@ img {
 /* Footer Styles */
 .footer {
   text-align: center;
+}
+
+/* Add this CSS to your styles.css file or within a <style> tag in the <head> of your HTML */
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: block;
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  /* Align the menu to the right */
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+  /* Add smooth transition effect */
+}
+
+/* Rotate bars for 'open' state */
+.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menu Styles */
+/* Add this CSS to your styles.css file or within a <style> tag in the <head> of your HTML */
+
+/* Menu Item Styles */
+.menu {
+  display: none;
+  /* Initially hide the menu */
+  padding: 10px;
+  background-color: #f5f5f5;
+  position: absolute;
+  top: 50px;
+  /* Adjust the top position based on your design */
+  right: 10px;
+  /* Adjust the right position based on your design */
+  z-index: 1000;
+  /* Ensure the menu appears above other content */
+}
+
+.menu.active {
+  display: block;
+  /* Show the menu when active */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Add a shadow effect */
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.menu a:hover {
+  color: #007bff;
+  /* Change color on hover */
 }

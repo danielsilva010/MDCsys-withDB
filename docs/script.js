@@ -16,8 +16,15 @@ const sections = document.querySelectorAll('.container > img, .container > *'); 
 let delay = 0.3;
 
 sections.forEach(section => {
-   section.style.opacity = 0; // Add opacity for fade-in
-   section.style.animation = 'fadeIn 1s ease-in forwards'; 
-   section.style.animationDelay = delay + 's';
-   delay += 0.2; 
+    section.style.opacity = 0; // Add opacity for fade-in
+    section.style.animation = 'fadeIn 1s ease-in forwards';
+    section.style.animationDelay = delay + 's';
+    delay += 0.2;
 });
+
+
+
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}

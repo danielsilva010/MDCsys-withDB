@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Faculty Course Management System</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <nav class="navbar">
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="menu">
+      <li><a href="#hero-section">Home</a></li>
+      <li><a href="#key-features">Key Features</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
+      <li><a href="#technologies">Technologies</a></li>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#structure">Structure</a></li>
+      <li><a href="#disclaimer">Disclaimer</a></li>
+      <li><a href="#visit-repository">Visit the repository</a></li>
+      <li><a href="#download-source-code">Download the source code</a></li>
+      <li><a href="#license">License</a></li>
+    </ul>
+  </nav>
   <div class="container">
-   <section class="hero">
-    <h1>Faculty Course Management System</h1>
-    <p>The Faculty Course Management System is a Java-based application designed to facilitate the organization and viewing of faculty course schedules within an educational institution. Leveraging JavaFX for the user interface, it allows for efficient management of course schedules, faculty assignments, and course rosters</p>
-</section>
+    <section class="hero">
+      <h1 id="hero-section">Faculty Course Management System</h1>
+      <p>The Faculty Course Management System is a Java-based application designed to facilitate the organization and
+        viewing of faculty course schedules within an educational institution. Leveraging JavaFX for the user interface,
+        it allows for efficient management of course schedules, faculty assignments, and course rosters</p>
+    </section>
     <h2>Key Features</h2>
     <ul id="key-features">
       <li><strong>Faculty Schedule View</strong>: Enables faculty members to view their teaching schedules.</li>
-      <li><strong>Course Information Management</strong>: Allows insertion and retrieval of course details such as CRN, course name, term, and associated faculty.</li>
-      <li><strong>Faculty Data Entry</strong>: Provides a user interface for faculty to input their ID and retrieve their course schedule.</li>
-      <li><strong>Error Handling</strong>: Implements error alerts for database connectivity and data retrieval issues.</li>
+      <li><strong>Course Information Management</strong>: Allows insertion and retrieval of course details such as CRN,
+        course name, term, and associated faculty.</li>
+      <li><strong>Faculty Data Entry</strong>: Provides a user interface for faculty to input their ID and retrieve
+        their course schedule.</li>
+      <li><strong>Error Handling</strong>: Implements error alerts for database connectivity and data retrieval issues.
+      </li>
     </ul>
 
-    <h2><a href="screenshots.html">Screenshots</a></h2>
+    <h2 id="screenshots"><a href="screenshots.html">Screenshots</a></h2>
     <div><img src="assets/mainView.png" alt="Screenshot of the system" style="width: 600px; height: auto;"></div>
 
-    <h2>Technologies</h2>
+    <h2 id="technologies">Technologies</h2>
     <p>- <strong>Java</strong>: Primary programming language used for backend logic.</p>
     <p>- <strong>JavaFX</strong>: Used for creating the graphical user interface.</p>
     <p>- <strong>MySQL/JDBC</strong>: Potential database connectivity for storing and retrieving schedule data.</p>
@@ -37,17 +65,19 @@
     </ul>
 
     <h2>Usage</h2>
-    <p>Faculty members can enter their ID in the provided text field to view their scheduled courses. The system also supports adding new course schedules to the database.</p>
+    <p>Faculty members can enter their ID in the provided text field to view their scheduled courses. The system also
+      supports adding new course schedules to the database.</p>
 
     <h2>Components</h2>
     <ul>
       <li><strong>Frontend:</strong> The user interface is implemented using JavaFX.</li>
-      <li><strong>Java:</strong> The main logic of the system is implemented in Java. The database connectivity is handled using MySQL.</li>
+      <li><strong>Java:</strong> The main logic of the system is implemented in Java. The database connectivity is
+        handled using MySQL.</li>
       <li><strong>Database:</strong> The database is implemented using MySQL.</li>
       <li><strong>JDBC:</strong> The database is connected using JDBC.</li>
     </ul>
 
-    <h2>Structure</h2>
+    <h2 id="structure">Structure</h2>
     <ul>
       <li><strong>src:</strong> The source code for the system is stored here.</li>
       <li><strong>Controllers:</strong> The controller classes are stored here.</li>
@@ -58,19 +88,22 @@
       <li><strong>DAO:</strong> The data access object is stored here.</li>
     </ul>
 
-    <h2>Disclaimer</h2>
-    <p>The system is provided "as is" without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability and fitness for a particular purpose.</p>
+    <h2 id="disclaimer">Disclaimer</h2>
+    <p>The system is provided "as is" without warranty of any kind, either express or implied, including but not limited
+      to the implied warranties of merchantability and fitness for a particular purpose.</p>
 
-    <h2>Visit the repository</h2>
-    <p><a href="https://github.com/danielsilva010/MDCsys-withDB" target="_blank">https://github.com/danielsilva010/MDCsys-withDB</a></p>
+    <h2 id="visit-repository">Visit the repository</h2>
+    <p><a href="https://github.com/danielsilva010/MDCsys-withDB"
+        target="_blank">https://github.com/danielsilva010/MDCsys-withDB</a></p>
 
-    <h2>Download the source code</h2>
-    <p><a href="https://github.com/danielsilva010/MDCsys-withDB/archive/refs/heads/main.zip" target="_blank">https://github.com/danielsilva010/MDCsys-withDB/archive/refs/heads/main.zip</a></p>
+    <h2 id="download-source-code">Download the source code</h2>
+    <p><a href="https://github.com/danielsilva010/MDCsys-withDB/archive/refs/heads/main.zip"
+        target="_blank">https://github.com/danielsilva010/MDCsys-withDB/archive/refs/heads/main.zip</a></p>
   </div>
   <footer style="text-align: center;">
-    <p>&copy; Copyright (c) 2024 Daniel Silva.  Licensed under the <a href="license.html">MIT License</a>.</p>
+    <p>&copy; Copyright (c) 2024 Daniel Silva. Licensed under the <a id="license" href="license.html">MIT License</a>.</p>
   </footer>
   <script src="script.js"></script>
 </body>
-</html>
 
+</html>
