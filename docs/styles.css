@@ -6,6 +6,44 @@ body {
   margin: 0; /* Remove default body margin for better control */
 }
 
+/* Style the hero section */
+.hero {
+    height: 60vh; /* Adjust height as needed */
+    background-color: #f0f0f0;  
+    text-align: center;
+    position: relative; /* Enables positioning of child elements */
+}
+
+.hero h1 {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards; /* Animation properties */
+    animation-delay: 0.5s; /* Slight delay before fading in */ 
+}
+
+.hero p {
+    opacity: 0;
+    animation: slideUp 1.5s ease-in forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0px); }
+}
+
+#key-features li {
+   transition: background-color 0.3s ease; /* For the hover effect */
+}
+
+#key-features li .feature-description {
+   display: none; /* Initially hide the description */
+}
+
 /* Global Styles for all devices */
 .container, .navigation, .footer {
   padding: 20px; /* Consistent padding for sections */
