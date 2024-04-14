@@ -24,4 +24,5 @@ img {
   height: auto;
   display: block; /* Add this line */
   margin: 0 auto; /* Add this line */
+    object-fit: contain;
 }
