@@ -1,0 +1,21 @@
+name: Build and Zip on Commit
+
+on:
+  push:   # Trigger the workflow on every push (commit) to any branch
+    branches: [ main ]  # You might want to limit this to your main branch
+
+jobs:
+  build_and_zip:
+    runs-on: ubuntu-latest  # Use an Ubuntu runner
+
+    steps:
+      - uses: actions/checkout@v3  # Check out your code
+
+      - name: Create Zip Archive
+        run: zip -r release.zip . -x '*.git*'  # Create 'release.zip', exclude .git 
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: release  # Name of the artifact
+          path: release.zip  
