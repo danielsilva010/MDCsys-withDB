@@ -55,6 +55,10 @@ img {
     width: 100%;
   }
 
+  img {
+    object-fit: contain;
+  }
+
   /* Adjust heading sizes for mobile */
   h1 {
     font-size: 1.8em;
