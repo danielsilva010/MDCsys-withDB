@@ -174,6 +174,7 @@ public class Main extends Application {
             alert.setHeaderText("Error loading view");
             alert.setContentText("An error occurred while loading the view: " + e.getMessage());
             alert.showAndWait();
+            
         }
     }
 
