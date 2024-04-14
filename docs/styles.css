@@ -2,77 +2,89 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f5f5f5; /* Light background for better contrast */
+  background-color: #f5f5f5;
+  margin: 0; /* Remove default body margin for better control */
+}
+
+/* Global Styles for all devices */
+.container, .navigation, .footer {
+  padding: 20px; /* Consistent padding for sections */
+}
+
+h1, h2, h3 {
+  margin: 1em 0; /* Consistent margin for headings */
+}
+
+ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default list padding */
+}
+
+li {
+  margin-bottom: 10px; /* Spacing between list items */
+}
+
+a {
+  color: #2196F3; /* Accent color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8; /* Slight opacity change on hover */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
 }
 
 /* Container Styles */
 .container {
-  width: 70%; /* Adjust container width as needed */
-  padding: 20px; /* Add padding for better spacing */
+  width: 70%;
   margin: auto;
   overflow: hidden;
 }
 
 /* Media Queries for Mobile Devices (Adjust breakpoint as needed) */
 @media only screen and (max-width: 768px) {
-  /* Adjust container styles for mobile */
+  /* Adjust container width for mobile */
   .container {
     width: 100%;
-    padding: 10px;
+  }
+
+  /* Adjust heading sizes for mobile */
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2, h3 {
+    font-size: 1.5em;
+  }
+
+  /* Stack elements vertically on mobile */
+  .container > * {
+    margin-bottom: 20px; /* Spacing between sections on mobile */
   }
 }
 
-/* Headings */
-h1, h2 {
-  color: #2196F3; /* Accent color for headings */
-}
-
-h3 {
-  color: #333; /* Subheading with a darker tone */
-}
-
-/* Text Styles */
-p, li {
-  color: #666; /* Slightly lighter text for better readability */
-  line-height: 1.8; /* Increase line-height for better spacing */
+/* Media Queries for Tablets (Optional - Adjust breakpoint as needed) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  /* Adjust container width for tablets */
+  .container {
+    width: 80%;
+  }
 }
 
 /* Navigation (Example) */
 .navigation {
   background-color: #eee;
-  padding: 10px;
-  margin-bottom: 20px;
-  display: flex; /* Use flexbox for responsive layout */
-  justify-content: space-between; /* Distribute links evenly */
-}
-
-.navigation a {
-  color: #333;
-  text-decoration: none;
-  padding: 5px 10px;
-}
-
-.navigation a:hover {
-  background-color: #ddd;
-}
-
-/* Code Styling */
-code {
-  background: #f4f4f4;
-  padding: 2px 4px;
-  border-radius: 3px;
-}
-
-/* Image Styles */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 10px auto;
-  border: 1px solid #ddd; /* Subtle border */
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Footer Styles */
-footer {
-  text-align: center; /* Center text in footer */
+.footer {
+  text-align: center;
 }
