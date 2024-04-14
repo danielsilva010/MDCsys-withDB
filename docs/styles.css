@@ -38,6 +38,7 @@ img {
   height: auto;
   display: block;
   margin: 10px auto;
+  object-fit: contain;
 }
 
 /* Container Styles */
