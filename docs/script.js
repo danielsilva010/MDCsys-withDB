@@ -11,3 +11,11 @@ listItems.forEach(item => {
         item.querySelector('.feature-description').style.display = 'none';
     });
 });
+
+const sections = document.querySelectorAll('.container > section, .container > h2, .container p');
+let delay = 0.3; // Initial delay
+
+sections.forEach(section => {
+    section.style.animationDelay = delay + 's';
+    delay += 0.2; // Increment delay for each section
+});
