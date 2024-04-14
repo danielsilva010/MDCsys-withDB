@@ -1,12 +1,28 @@
+/* Body Styles */
 body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
   background-color: #f5f5f5; /* Light background for better contrast */
 }
 
+/* Container Styles */
 .container {
   width: 70%; /* Adjust container width as needed */
   padding: 20px; /* Add padding for better spacing */
+  margin: auto;
+  overflow: hidden;
 }
 
+/* Media Queries for Mobile Devices (Adjust breakpoint as needed) */
+@media only screen and (max-width: 768px) {
+  /* Adjust container styles for mobile */
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Headings */
 h1, h2 {
   color: #2196F3; /* Accent color for headings */
 }
@@ -15,15 +31,19 @@ h3 {
   color: #333; /* Subheading with a darker tone */
 }
 
+/* Text Styles */
 p, li {
   color: #666; /* Slightly lighter text for better readability */
   line-height: 1.8; /* Increase line-height for better spacing */
 }
 
-.navigation { /* Add a navigation bar (example) */
+/* Navigation (Example) */
+.navigation {
   background-color: #eee;
   padding: 10px;
   margin-bottom: 20px;
+  display: flex; /* Use flexbox for responsive layout */
+  justify-content: space-between; /* Distribute links evenly */
 }
 
 .navigation a {
@@ -36,11 +56,23 @@ p, li {
   background-color: #ddd;
 }
 
-img {
-  border: 1px solid #ddd; /* Add a subtle border */
-  margin: 10px auto;
+/* Code Styling */
+code {
+  background: #f4f4f4;
+  padding: 2px 4px;
+  border-radius: 3px;
 }
 
+/* Image Styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border: 1px solid #ddd; /* Subtle border */
+}
+
+/* Footer Styles */
 footer {
   text-align: center; /* Center text in footer */
 }
