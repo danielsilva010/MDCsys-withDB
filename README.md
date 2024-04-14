@@ -56,4 +56,4 @@ Faculty members can enter their ID in the provided text field to view their sche
 
 The system is provided "as is" without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability and fitness for a particular purpose.
 
-## <a href="https://www.danielsilva010.github.io/MDCsys-withDB">Visit the site</a>
+## <a href="https://danielsilva010.github.io/MDCsys-withDB">Visit the site</a>
