@@ -1,6 +1,5 @@
 package Controllers;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import DAOs.MajorDAO;
@@ -11,7 +10,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 public class EditEntityController {
@@ -23,7 +21,7 @@ public class EditEntityController {
     private ComboBox<String> cbMajorID;
 
     @FXML
-    private DatePicker dpExpectedGraduation;
+    private TextField tfExpectedGraduation;
 
     @FXML
     private TextField tfCity;
@@ -36,6 +34,9 @@ public class EditEntityController {
 
     @FXML
     private TextField tfLastName;
+
+    @FXML
+    private TextField tfPhone;
 
     @FXML
     private TextField tfState;
@@ -70,16 +71,18 @@ public class EditEntityController {
             Students student = StudentDAO.getStudentById(tfID.getText());
             if (student != null) {
                 tfStudentID.setText(student.getStudentID());
-                
+
                 tfFirstName.setText(student.getFirstName());
                 tfLastName.setText(student.getLastName());
+                tfPhone.setText(student.getPhone());
                 tfEmail.setText(student.getEmail());
                 tfStreet.setText(student.getStreet());
                 tfCity.setText(student.getCity());
                 tfState.setText(student.getState());
                 tfZipCode.setText(String.valueOf(student.getZipCode()));
-                cbMajorID.setValue(String.valueOf(student.getMajorID() + " - " + MajorDAO.getMajorName(student.getMajorID())));
-                dpExpectedGraduation.setValue(LocalDate.parse(student.getExpectedGraduationDate()));
+                cbMajorID.setValue(
+                        String.valueOf(student.getMajorID() + " - " + MajorDAO.getMajorName(student.getMajorID())));
+                tfExpectedGraduation.setText(student.getExpectedGraduationDate());
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -103,7 +106,7 @@ public class EditEntityController {
             alert.showAndWait();
             return false;
         }
-        if (dpExpectedGraduation.getValue() == null) {
+        if (tfExpectedGraduation.getText() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error");
@@ -143,6 +146,14 @@ public class EditEntityController {
             alert.showAndWait();
             return false;
         }
+        if (tfPhone.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a phone number.");
+            alert.showAndWait();
+            return false;
+        }
         if (tfState.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -171,5 +182,3 @@ public class EditEntityController {
     }
 
 }
-
-
