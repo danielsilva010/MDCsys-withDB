@@ -1,6 +1,6 @@
 package Controllers;
 
-import static Utils.dataUtilities.getCourseName;
+import static Utils.DataUtilities.getCourseName;
 
 import java.util.ArrayList;
 

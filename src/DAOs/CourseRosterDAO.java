@@ -1,6 +1,6 @@
 package DAOs;
 
-import static Utils.dataUtilities.convertGradeToDouble;
+import static Utils.DataUtilities.convertGradeToDouble;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

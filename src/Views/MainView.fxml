@@ -213,7 +213,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="155.0" style="-fx-background-insets: -10; -fx-padding: 10;" text="Edit Faculty/Student" wrapText="true">
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="155.0" style="-fx-background-insets: -10; -fx-padding: 10;" onAction="#loadEditEntityView" text="Edit Faculty/Student" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="13.0" />
                      </font>

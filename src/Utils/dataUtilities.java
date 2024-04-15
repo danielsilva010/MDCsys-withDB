@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-public class dataUtilities {
+public class DataUtilities {
     public static double convertGradeToDouble(String grade) {
         if (grade.startsWith("A")) {
             return 4.0;
@@ -47,5 +47,15 @@ public class dataUtilities {
             alert.showAndWait();
         }
         return null;
+    }
+
+    public static String formatDateFromYYMMDDToMMDDYY(String date) {
+        String [] parts = date.split("-");
+        return parts[1] + "-" + parts[2] + "-" + parts[0];
+    }
+
+    public static String formatDateFromMMDDYYToYYMMDD(String date) {
+        String[] parts = date.split("-");
+        return parts[2] + "-" + parts[0] + "-" + parts[1];
     }
 }

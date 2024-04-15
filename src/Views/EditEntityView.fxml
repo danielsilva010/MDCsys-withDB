@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EditEntityController">
+  <tabs>
+    <Tab text="Edit Student">
+         <content>
+            <VBox>
+               <children>
+                  <GridPane prefHeight="645.0" prefWidth="600.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="1">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="2">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="3">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Street:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="4">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="5">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="6">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="7">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="8">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="9">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Major ID:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.rowIndex="10">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expected Graduation Date:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1">
+                           <children>
+                              <TextField fx:id="tfFirstName" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="tfLastName" onAction="#enter" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <TextField fx:id="tfStudentID" onAction="#enter" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <TextField fx:id="tfStreet" onAction="#enter" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <TextField fx:id="tfCity" onAction="#enter" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <TextField fx:id="tfState" onAction="#enter" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <children>
+                              <TextField onAction="#enter" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <children>
+                              <TextField fx:id="tfZipCode" onAction="#enter" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <children>
+                              <TextField fx:id="tfEmail" onAction="#enter" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <children>
+                              <ComboBox fx:id="cbMajorID" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                           <children>
+                              <DatePicker fx:id="dpExpectedGraduation" onAction="#enter" />
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnSpan="2" GridPane.rowIndex="11">
+                           <children>
+                              <ButtonBar prefHeight="31.0" prefWidth="211.0">
+                                 <buttons>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Student ID" />
+                                    <TextField fx:id="tfID" promptText="here..." style="-fx-background-color: grey; -fx-text-fill: white;" />
+                                    <Button minWidth="9.0" mnemonicParsing="false" onAction="#search" prefHeight="26.0" text="Search" />
+                                 </buttons>
+                              </ButtonBar>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children></VBox>
+         </content>
+    </Tab>
+    <Tab text="Edit Faculty" />
+  </tabs>
+</TabPane>

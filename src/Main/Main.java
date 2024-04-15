@@ -234,6 +234,26 @@ public class Main extends Application {
         }
     }
 
+    public void loadEditEntityView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(FilePaths.EDIT_ENTITY_VIEW.getPath()));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Edit Entity");
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading view");
+            alert.setContentText("An error occurred while loading the view: " + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
     public void loadViewCourseScheduleView() {
         try {
             FXMLLoader loader = new FXMLLoader();

@@ -68,4 +68,9 @@ public class MainController implements SceneManager {
     public void loadCreateFacultyView(ActionEvent event) {
         main.loadCreateFacultyView();
     }
+
+    @FXML
+    public void loadEditEntityView(ActionEvent event) {
+        main.loadEditEntityView();
+    }
 }
