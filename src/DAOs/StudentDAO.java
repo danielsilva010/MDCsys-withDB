@@ -2,6 +2,7 @@ package DAOs;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -67,5 +68,40 @@ public class StudentDAO {
             alert.showAndWait();
         }
         return false;
+    }
+
+    public static boolean updateStudent(Students student) {
+        String user = System.getenv("USER");
+        String password = System.getenv("PASSWORD");
+        String url = System.getenv("URL");
+
+        try(Connection conn = DriverManager.getConnection(url, user, password)) {
+            //prepared stmt
+            String sql = "UPDATE Students SET firstName = ?, lastName = ?, street = ?, city = ?, state = ?, zipCode = ?, phone = ?, email = ?, MajorID = ?, expectedGraduationDate = ? WHERE studentID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, student.getFirstName());
+            pstmt.setString(2, student.getLastName());
+            pstmt.setString(3, student.getStreet());
+            pstmt.setString(4, student.getCity());
+            pstmt.setString(5, student.getState());
+            pstmt.setInt(6, student.getZipCode());
+            pstmt.setString(7, student.getPhone());
+            pstmt.setString(8, student.getEmail());
+            pstmt.setInt(9, student.getMajorID());
+            pstmt.setString(10, student.getExpectedGraduationDate());
+            pstmt.setString(11, student.getStudentID());
+
+            pstmt.executeUpdate();
+
+            return true;
+        } catch(SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Database Error");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+            return false;
+        }
     }
 }
