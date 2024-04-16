@@ -10,6 +10,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class DataUtilities {
+    /**
+     * Converts a grade string to a double value.
+     *
+     * @param grade the grade string to be converted
+     * @return the converted double value. Returns -1.0 if the grade string does not
+     *         start with "A", "B", "C", "D", or "F".
+     */
     public static double convertGradeToDouble(String grade) {
         if (grade.startsWith("A")) {
             return 4.0;
@@ -26,6 +33,12 @@ public class DataUtilities {
         }
     }
 
+    /**
+     * Retrieves the course name associated with the given CRN from the database.
+     *
+     * @param crn the CRN (Course Reference Number) of the course
+     * @return the course name if found, null otherwise
+     */
     public static String getCourseName(String crn) {
         String user = System.getenv("USER");
         String password = System.getenv("PASSWORD");
@@ -47,15 +60,5 @@ public class DataUtilities {
             alert.showAndWait();
         }
         return null;
-    }
-
-    public static String formatDateFromYYMMDDToMMDDYY(String date) {
-        String [] parts = date.split("-");
-        return parts[1] + "-" + parts[2] + "-" + parts[0];
-    }
-
-    public static String formatDateFromMMDDYYToYYMMDD(String date) {
-        String[] parts = date.split("-");
-        return parts[2] + "-" + parts[0] + "-" + parts[1];
     }
 }
