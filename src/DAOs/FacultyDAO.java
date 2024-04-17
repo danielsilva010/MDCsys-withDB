@@ -145,6 +145,60 @@ public class FacultyDAO {
         }
     }
 
+    public static boolean deleteFaculty(String id) {
+        String user = System.getenv("USER");
+        String password = System.getenv("PASSWORD");
+        String url = System.getenv("URL");
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            String sql = "DELETE FROM faculty WHERE facultyID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+            pstmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading faculty");
+            alert.setContentText("An error occurred while loading the faculty: " + e.getMessage());
+            alert.showAndWait();
+            return false;
+        }
+    }
+
+    public static boolean updateFaculty(Faculty faculty) {
+        String user = System.getenv("USER");
+        String password = System.getenv("PASSWORD");
+        String url = System.getenv("URL");
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            String sql = "UPDATE faculty SET firstName = ?, lastName = ?, hireDate = ?, title = ?, salary = ?, street = ?, city = ?, state = ?, zipCode = ?, phone = ?, email = ?, departmentID = ? WHERE facultyID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, faculty.getFirstName());
+            pstmt.setString(2, faculty.getLastName());
+            pstmt.setString(3, faculty.getHireDate());
+            pstmt.setString(4, faculty.getTitle());
+            pstmt.setDouble(5, faculty.getSalary());
+            pstmt.setString(6, faculty.getStreet());
+            pstmt.setString(7, faculty.getCity());
+            pstmt.setString(8, faculty.getState());
+            pstmt.setInt(9, faculty.getZipCode());
+            pstmt.setString(10, faculty.getPhone());
+            pstmt.setString(11, faculty.getEmail());
+            pstmt.setInt(12, faculty.getDepartmentID());
+            pstmt.setString(13, faculty.getFacultyID());
+            pstmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error loading faculty");
+            alert.setContentText("An error occurred while loading the faculty: " + e.getMessage());
+            alert.showAndWait();
+            return false;
+        }
+    }
+
     /**
      * Retrieves the full name of a faculty member with the given ID.
      *

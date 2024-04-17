@@ -70,6 +70,26 @@ public class StudentDAO {
         return false;
     }
 
+    public static boolean deleteStudent(String id) {
+        String user = System.getenv("USER");
+        String password = System.getenv("PASSWORD");
+        String url = System.getenv("URL");
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM Students WHERE StudentID = ?");
+            pstmt.setString(1, id);
+            pstmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Database Error");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+            return false;
+        }
+    }
+
     public static boolean updateStudent(Students student) {
         String user = System.getenv("USER");
         String password = System.getenv("PASSWORD");
