@@ -11,8 +11,21 @@ import java.util.ArrayList;
 import Models.Faculty;
 import javafx.scene.control.Alert;
 
+/**
+ * Data Access Object (DAO) for interacting with the Faculty table in the
+ * database.
+ *
+ * @author Daniel Silva
+ */
 public class FacultyDAO {
 
+    /**
+     * Retrieves a faculty member by their ID from the database.
+     *
+     * @param id the ID of the faculty member
+     * @return the Faculty object representing the faculty member, or null if not
+     *         found
+     */
     public static Faculty getFacultyById(String id) {
         String user = System.getenv("USER");
         String password = System.getenv("PASSWORD");
@@ -48,9 +61,13 @@ public class FacultyDAO {
             alert.showAndWait();
         }
         return null;
-
     }
 
+    /**
+     * Retrieves all faculty members from the database.
+     *
+     * @return an ArrayList of Faculty objects representing all faculty members
+     */
     public static ArrayList<Faculty> getAllFaculties() {
         String user = System.getenv("USER");
         String password = System.getenv("PASSWORD");
@@ -89,6 +106,12 @@ public class FacultyDAO {
         return null;
     }
 
+    /**
+     * Inserts a new faculty member into the database.
+     *
+     * @param faculty the faculty member to be inserted
+     * @return true if the faculty member is successfully inserted, false otherwise
+     */
     public static boolean insertFaculty(Faculty faculty) {
         String user = System.getenv("USER");
         String password = System.getenv("PASSWORD");
@@ -122,6 +145,12 @@ public class FacultyDAO {
         }
     }
 
+    /**
+     * Retrieves the full name of a faculty member with the given ID.
+     *
+     * @param id the ID of the faculty member
+     * @return the full name of the faculty member, or null if not found
+     */
     public static String getFacultyName(String id) {
         String user = System.getenv("USER");
         String password = System.getenv("PASSWORD");
