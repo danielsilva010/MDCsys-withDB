@@ -118,12 +118,12 @@
                         </VBox>
                         <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <children>
-                              <TextField fx:id="tfCityStudent" onAction="#enter" />
+                              <TextField fx:id="tfCityStudent" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <children>
-                              <TextField fx:id="tfStateStudent" onAction="#enter" />
+                              <TextField fx:id="tfStateStudent" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
@@ -133,12 +133,12 @@
                         </VBox>
                         <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
                            <children>
-                              <TextField fx:id="tfPhoneStudent" onAction="#enter" />
+                              <TextField fx:id="tfPhoneStudent" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <children>
-                              <TextField fx:id="tfEmailStudent" onAction="#enter" />
+                              <TextField fx:id="tfEmailStudent" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.rowIndex="9">

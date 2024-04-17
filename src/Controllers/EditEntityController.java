@@ -61,7 +61,6 @@ public class EditEntityController {
     @FXML
     private TextField tfZipCodeFaculty;
 
-
     @FXML
     private ComboBox<String> cbMajorIDStudent;
 
@@ -117,11 +116,6 @@ public class EditEntityController {
     }
 
     @FXML
-    void enter(ActionEvent event) {
-
-    }
-
-    @FXML
     void searchStudent(ActionEvent event) {
         if (tfIDStudent.getText().length() == 9 && tfIDStudent.getText().matches("Z\\d{8}")) {
             Students student = StudentDAO.getStudentById(tfIDStudent.getText());
@@ -152,12 +146,26 @@ public class EditEntityController {
 
     @FXML
     void deleteFaculty(ActionEvent event) {
-
+        if (validateFacultyFields()) {
+            if (FacultyDAO.deleteFaculty(tfIDFaculty.getText())) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText("Faculty Deleted");
+                alert.setContentText("Faculty " + tfIDFaculty.getText() + " has been deleted successfully");
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error");
+                alert.setContentText("Faculty " + tfIDFaculty.getText() + " could not be deleted");
+                alert.showAndWait();
+            }
+        }
     }
 
     @FXML
     void deleteStudent(ActionEvent event) {
-        if (validateFields()) {
+        if (validateStudentFields()) {
             if (StudentDAO.deleteStudent(tfStudentID.getText())) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Success");
@@ -176,7 +184,35 @@ public class EditEntityController {
 
     @FXML
     void modifyFaculty(ActionEvent event) {
-
+        if (validateFacultyFields()) {
+            Faculty faculty = new Faculty();
+            faculty.setFacultyID(tfIDFaculty.getText());
+            faculty.setFirstName(tfFirstNameFaculty.getText());
+            faculty.setLastName(tfLastNameFaculty.getText());
+            faculty.setHireDate(tfHireDateFaculty.getText());
+            faculty.setTitle(tfTitleFaculty.getText());
+            faculty.setSalary(Double.parseDouble(tfSalaryFaculty.getText().substring(1)));
+            faculty.setStreet(taStreet.getText());
+            faculty.setCity(tfCityFaculty.getText());
+            faculty.setState(tfStateFaculty.getText());
+            faculty.setZipCode(Integer.parseInt(tfZipCodeFaculty.getText()));
+            faculty.setPhone(tfPhoneFaculty.getText());
+            faculty.setEmail(tfEmailFaculty.getText());
+            faculty.setDepartmentID(Integer.parseInt(cbDepartmentFaculty.getValue().split(" - ")[0]));
+            if (FacultyDAO.updateFaculty(faculty)) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText("Faculty Modified");
+                alert.setContentText("Faculty " + tfIDFaculty.getText() + " has been modified successfully");
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error");
+                alert.setContentText("Faculty " + tfIDFaculty.getText() + " could not be modified");
+                alert.showAndWait();
+            }
+        }
     }
 
     @FXML
@@ -190,7 +226,7 @@ public class EditEntityController {
                 tfPhoneFaculty.setText(faculty.getPhone());
                 tfEmailFaculty.setText(faculty.getEmail());
                 tfHireDateFaculty.setText(faculty.getHireDate());
-                tfSalaryFaculty.setText( "$" + String.valueOf(faculty.getSalary()));
+                tfSalaryFaculty.setText("$" + String.valueOf(faculty.getSalary()));
                 tfTitleFaculty.setText(faculty.getTitle());
                 cbDepartmentFaculty.setValue(String.valueOf(faculty.getDepartmentID() + " - "
                         + DepartmentDAO.getDepartmentName(faculty.getDepartmentID())));
@@ -210,7 +246,7 @@ public class EditEntityController {
 
     @FXML
     void modifyStudent(ActionEvent event) {
-        if (validateFields()) {
+        if (validateStudentFields()) {
             Students student = new Students();
             student.setStudentID(tfStudentID.getText());
             student.setFirstName(tfFirstNameStudent.getText());
@@ -240,7 +276,7 @@ public class EditEntityController {
         }
     }
 
-    private boolean validateFields() {
+    private boolean validateStudentFields() {
         if (tfStudentID.getText().length() != 9 || !tfStudentID.getText().matches("Z\\d{8}")) {
             return false;
         }
@@ -317,6 +353,77 @@ public class EditEntityController {
             return false;
         }
         if (tfZipCodeStudent.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a zip code.");
+            alert.showAndWait();
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateFacultyFields() {
+        if (tfIDFaculty.getText().length() != 9 || !tfIDFaculty.getText().matches("Z\\d{8}")) {
+            return false;
+        }
+        if (tfCityFaculty.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a city.");
+            alert.showAndWait();
+            return false;
+        }
+        if (tfEmailFaculty.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter an email.");
+            alert.showAndWait();
+            return false;
+        }
+        if (tfFirstNameFaculty.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a first name.");
+            alert.showAndWait();
+            return false;
+        }
+        if (tfLastNameFaculty.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a last name.");
+            alert.showAndWait();
+            return false;
+        }
+        if (tfPhoneFaculty.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a phone number.");
+            alert.showAndWait();
+            return false;
+        }
+        if (tfStateFaculty.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a state.");
+            alert.showAndWait();
+            return false;
+        }
+        if (taStreet.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a street.");
+            alert.showAndWait();
+            return false;
+        }
+        if (tfZipCodeFaculty.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error");
