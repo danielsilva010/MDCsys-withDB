@@ -1,7 +1,5 @@
 package DAOs;
 
-import static Utils.DataUtilities.convertGradeToDouble;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +10,8 @@ import java.util.ArrayList;
 import Models.CourseRoster;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+
+
 
 public class CourseRosterDAO {
 
@@ -130,5 +130,38 @@ public class CourseRosterDAO {
             alert.showAndWait();
         }
         return grades;
+    }
+
+    private static Double convertGradeToDouble(String string) {
+
+        switch (string) {
+            case "A":
+            case "a":
+            case "A+":
+            case "a+":
+                return 4.0;
+            case "B":
+            case "b":
+            case "B+":
+            case "b+":
+                return 3.0;
+            case "C":
+            case "c":
+            case "C+":
+            case "c+":
+                return 2.0;
+            case "D":
+            case "d":
+            case "D+":
+            case "d+":
+                return 1.0;
+            case "F":
+            case "f":
+            case "F+":
+            case "f+":
+                return 0.0;
+            default:
+                return 0.0;
+        }
     }
 }

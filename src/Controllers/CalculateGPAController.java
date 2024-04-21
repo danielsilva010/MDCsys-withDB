@@ -1,10 +1,9 @@
 package Controllers;
 
-import static Utils.DataUtilities.getCourseName;
-
 import java.util.ArrayList;
 
 import DAOs.CourseRosterDAO;
+import DAOs.ScheduleDAO;
 import DAOs.StudentDAO;
 import Models.Students;
 import javafx.event.ActionEvent;
@@ -80,7 +79,7 @@ public class CalculateGPAController {
                         total += grades.get(i);
                     }
                     textGPA.setText(String.format("%.2f", total / grades.size()));
-                    textName.setText(getCourseName(tfIDCRN.getText()));
+                    textName.setText(ScheduleDAO.getCourseName(Long.parseLong(tfIDCRN.getText())));
                 } else {
                     textGPA.setText("");
                     textName.setText("");
@@ -102,3 +101,5 @@ public class CalculateGPAController {
     }
 
 }
+
+

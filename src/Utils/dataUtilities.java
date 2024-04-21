@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-public class DataUtilities {
+public class dataUtilities {
     /**
      * Converts a grade string to a double value.
      *

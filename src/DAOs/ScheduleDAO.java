@@ -48,6 +48,31 @@ public class ScheduleDAO {
         return courses;
     }
 
+    public static String getCourseName(long CRN) {
+        String user = System.getenv("USER");
+        String password = System.getenv("PASSWORD");
+        String url = System.getenv("URL");
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            String sql = "SELECT CourseName FROM Schedule WHERE CRN = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setLong(1, CRN);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getString("CourseName");
+            }
+        } catch (SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Database Error");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+
+        }
+        return null;
+
+    }
+
     public static Schedule getOneSchedule(long CRN) {
         String user = System.getenv("USER");
         String password = System.getenv("PASSWORD");

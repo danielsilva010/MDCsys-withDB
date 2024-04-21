@@ -7,6 +7,10 @@ body {
   /* Remove default body margin for better control */
 }
 
+.visit-repository {
+  text-align: center;
+}
+
 .container>section,
 .container>ul,
 .container>img,
