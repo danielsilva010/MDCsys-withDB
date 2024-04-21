@@ -1,7 +1,7 @@
 package Controllers;
 
 import Main.Main;
-import Utils.SceneManager;
+import Utilities.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 

@@ -3,7 +3,7 @@ package Main;
 import java.io.IOException;
 
 import Controllers.MainController;
-import Utils.FilePaths;
+import Utilities.FilePaths;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

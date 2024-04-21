@@ -1,4 +1,4 @@
-package Utils;
+package Utilities;
 
 public enum FilePaths {
     MAIN_VIEW("/Views/MainView.fxml"),
